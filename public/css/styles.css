@@ -117,3 +117,31 @@ a:hover {
     font-size: 14px;
     text-align: center;
 }
+
+@media screen and (max-width: 600px) {
+    #front-matter{
+        width: 300px;
+    }
+
+    #header {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #home-link{
+        display: flex;
+        margin: 0;
+        flex-direction: column;
+    }
+    
+    #header-links {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .highlight {
+        margin:0;
+    }
+}

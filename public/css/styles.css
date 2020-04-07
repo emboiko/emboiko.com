@@ -1,17 +1,40 @@
 :root {
-    --dark-bg:#17202A;
+    --dark-bg:rgb(11, 14, 21);
+    --dark-bg-complement:rgb(33, 47, 61);
+    --dark-text: rgb(151, 154, 154);
     --light-text: #D5D8DC;
+    --highlight:rgb(0, 255, 149);
 }
 
 *{
     padding: 0;
     margin: 0;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
 }
 
-body {
+.home{
+    background: url("../img/home.jpg") no-repeat; 
+}
+.about{
+    background: url("../img/about.jpg") no-repeat; 
+}
+.portfolio{
+    background: url("../img/portfolio.jpg") no-repeat; 
+}
+.contact{
+    background: url("../img/contact.jpg") no-repeat; 
+}
+.signup{
+    background: url("../img/signup.jpg") no-repeat; 
+}
+.blog{
+    background: url("../img/blog.jpg") no-repeat; 
+}
+
+.wrapper {
     font-family: "Coda",Arial, Helvetica, sans-serif;
-    background: var(--dark-bg);
+    background-size: contain;
+    background-position: 0 97%;
     color: var(--light-text);
     display: flex;
     flex-direction: column;
@@ -19,36 +42,78 @@ body {
     justify-content: space-between;
 }
 
+.wrapper:after{
+    position: fixed;
+    content: " ";
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    background-color: rgba(33, 47, 61, 0.30);
+}
+
+p {
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+}
+
 a {
     text-decoration: none;
     color: var(--light-text);
+    padding:10px;
+    transition: 0.3s;
+}
+  
+a:hover {
+    background-color: rgb(0, 255, 149);
+    color:var(--dark-bg);
+}
+
+.highlight{
+    color:var(--highlight);
+    margin: 0 25px;
 }
 
 #front-matter {
-    width:50%;
-    margin: 0 auto;
-    border:2px solid red;
+    width:500px;
+    margin: 25px auto 75px auto;
     text-align: center;
+    background:var(--dark-bg);
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px 10px var(--dark-bg-complement);
+    z-index: 1;
+}
+
+#front-matter h1 {
+    margin: 5px 0;
 }
 
 #front-matter p {
-    font-family: "Raleway",Arial, Helvetica, sans-serif;
-    margin-top: 25px;
+    margin: 10px 0;
+    color:var(--highlight);
 }
 
 #header {
-    border:2px solid red;
+    background: var(--dark-bg);
+    padding:10px;
+    z-index: 1;
+    border-bottom: 2px solid var(--highlight);
 }
 
 #header-links {
-    border: 2px solid green;
     float: right;
+    margin-right:10px
 }
 
 #home-link {
-    border: 2px solid green;
+    margin-left: 10px;
 }
 
 #footer {
-    border:2px solid red;
+    background: var(--dark-bg);
+    padding: 10px;
+    z-index: 1;
+    color: var(--dark-text);
+    font-size: 14px;
+    text-align: center;
 }

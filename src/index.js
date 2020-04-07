@@ -18,14 +18,17 @@ app.get("/", (req, res) => {
 app.get("/about", (req, res) => {
     res.render("about");
 });
-app.get("/projects", (req, res) => {
-    res.render("projects");
+app.get("/portfolio", (req, res) => {
+    res.render("portfolio");
 });
 app.get("/contact", (req, res) => {
     res.render("contact");
+});
+app.get("/signup", (req, res) => {
+    res.render("signup");
 });
 app.get("/blog", (req, res) => {
     res.render("blog");
 });
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 1337);

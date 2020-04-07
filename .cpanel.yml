@@ -1,4 +1,4 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/emboik5/emboiko.com/
+    - export DEPLOYPATH=/home/emboik5/emboiko.com.git/

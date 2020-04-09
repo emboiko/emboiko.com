@@ -68,7 +68,7 @@ a:hover {
     color:var(--highlight);
 }
 .bracket{
-    margin: 0 10%;
+    margin: 0 5%;
 }
 .indented{
     margin:20px 0 0 40px;
@@ -95,7 +95,9 @@ a:hover {
     font-size: 14px;
     text-align: center;
 }
-
+.thicc {
+    font-size: 72px;
+}
 /************************************/
 
 #front-matter {
@@ -227,7 +229,7 @@ a:hover {
     background-color: #BCC0C4;
     font-size: 18px;
 }
-#submit{
+.submit{
     height:30px;
     width:25%;
     margin: 2% auto;
@@ -237,11 +239,51 @@ a:hover {
     transition: 0.3s;
     border-radius: 10px;
 }
-#submit:hover{
+.submit:hover{
     background-color:var(--highlight);
 }
 
 
+/************************************/
+#signup-front-matter{
+    width:500px;
+    margin: 25px auto 75px auto;
+    text-align: center;
+    background:var(--dark-bg);
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px 10px var(--dark-bg-complement);
+    z-index: 1;
+}
+#signup-front-matter p {
+    padding:16px;
+}
+#signup{
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+}
+#signup input {
+    margin-bottom: 2%;
+    border: none;
+    height: 24px;
+    padding:16px;
+    font-size: 18px;
+}
+#signup button {
+    margin-top:5%;
+}
+/************************************/
+#notfound-front-matter {
+    width:500px;
+    margin: 25px auto 75px auto;
+    padding:2%;
+    text-align: center;
+    background:var(--dark-bg);
+    color:var(--highlight);
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px 10px var(--dark-bg-complement);
+    z-index: 1;
+}
 /************************************/
 
 @media (max-width: 500px) {
@@ -267,6 +309,12 @@ a:hover {
     }
 
     #front-matter{
+        width:300px;
+    }
+    #notfound-front-matter{
+        width:300px;
+    }
+    #signup-front-matter{
         width:300px;
     }
 

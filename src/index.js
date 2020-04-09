@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const helmet = require("helmet");
 const hbs = require("hbs");
+const {welcomeEmail, cancelEmail} = require("./email");
 
 const app = express();
 
@@ -15,20 +16,42 @@ hbs.registerPartials(path.join(__dirname, "../templates/partials"));
 app.get("/", (req, res) => {
     res.render("home");
 });
+
 app.get("/about", (req, res) => {
     res.render("about");
 });
+
 app.get("/portfolio", (req, res) => {
     res.render("portfolio");
 });
+
 app.get("/contact", (req, res) => {
     res.render("contact");
 });
+app.post("/contact", (req, res) => {
+    res.render("contact");
+});
+
 app.get("/signup", (req, res) => {
     res.render("signup");
 });
+app.post("/signup", (req, res) => {
+    res.render("signup");
+});
+
+app.get("/cancel", (req, res) => {
+    res.render("cancel");
+});
+app.post("/cancel", (req, res) => {
+    res.render("cancel");
+});
+
 app.get("/blog", (req, res) => {
     res.render("blog");
+});
+
+app.get("*", (req, res) => {
+    res.status(404).render("notfound");
 });
 
 app.listen(process.env.PORT || 1337);

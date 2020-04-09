@@ -67,6 +67,9 @@ a:hover {
 .highlight{
     color:var(--highlight);
 }
+.bracket{
+    margin: 0 10%;
+}
 .indented{
     margin:20px 0 0 40px;
     font-size: 20px;

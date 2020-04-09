@@ -7,7 +7,7 @@ const welcomeEmail = (email, name) => {
         to:email,
         from:"Ed@emboiko.com",
         subject:"Welcome! Thanks for joining.",
-        text:`Welcome to the app, ${name}. Let me know how you get along!`
+        text:`Welcome to the roster, ${name}. Let me know how you get along!`
     });
 }
 
@@ -20,7 +20,17 @@ const cancelEmail = (email, name) => {
     });
 }
 
+const messageEmail = (email, name, message) => {
+    sgMail.send({
+        to:"Ed@emboiko.com",
+        from:email,
+        subject:`Site Message from ${name}`,
+        text:message
+    });
+}
+
 module.exports = {
     welcomeEmail,
-    cancelEmail
+    cancelEmail,
+    messageEmail
 }

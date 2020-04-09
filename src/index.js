@@ -2,12 +2,14 @@ const path = require("path");
 const express = require("express");
 const helmet = require("helmet");
 const hbs = require("hbs");
-const {welcomeEmail, cancelEmail} = require("./email");
+const bodyParser = require("body-parser");
+const {welcomeEmail, cancelEmail, messageEmail} = require("./email");
 
 const app = express();
 
 app.use(helmet());
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "../templates"));
@@ -29,21 +31,24 @@ app.get("/contact", (req, res) => {
     res.render("contact");
 });
 app.post("/contact", (req, res) => {
-    res.render("contact");
+    let name = "Anonymous";
+    let email = "Anonymous@emboiko.com";
+
+    if (req.body.email) {
+        email = req.body.email;
+    }
+    if (req.body.name) {
+        name = req.body.name;
+    }
+
+    const message = req.body.compose;
+    messageEmail(email, name, message);
+    
+    res.render("submitted",{message:"Message submitted. We will get back to you in less than 24 hours"});
 });
 
 app.get("/signup", (req, res) => {
     res.render("signup");
-});
-app.post("/signup", (req, res) => {
-    res.render("signup");
-});
-
-app.get("/cancel", (req, res) => {
-    res.render("cancel");
-});
-app.post("/cancel", (req, res) => {
-    res.render("cancel");
 });
 
 app.get("/blog", (req, res) => {

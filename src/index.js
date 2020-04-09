@@ -3,7 +3,8 @@ const express = require("express");
 const helmet = require("helmet");
 const hbs = require("hbs");
 const bodyParser = require("body-parser");
-const {welcomeEmail, cancelEmail, messageEmail} = require("./email");
+const mongoose = require("mongoose");
+const messageEmail = require("./email");
 
 const app = express();
 
@@ -52,6 +53,9 @@ app.get("/signup", (req, res) => {
 });
 
 app.get("/blog", (req, res) => {
+    res.render("blog");
+});
+app.post("/blog", (req, res) => {
     res.render("blog");
 });
 

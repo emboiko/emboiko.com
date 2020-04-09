@@ -5,7 +5,6 @@
     --light-text: #D5D8DC;
     --highlight:rgb(0, 255, 149);
 }
-
 *{
     padding: 0;
     margin: 0;
@@ -41,7 +40,6 @@
     min-height: 100vh;
     justify-content: space-between;
 }
-
 .wrapper:after{
     position: fixed;
     content: " ";
@@ -56,43 +54,36 @@
 p {
     font-family: "Raleway",Arial, Helvetica, sans-serif;
 }
-
 a {
     text-decoration: none;
     color: var(--light-text);
     padding:10px;
     transition: 0.3s;
 }
-  
 a:hover {
     background-color: rgb(0, 255, 149);
     color:var(--dark-bg);
 }
-
 .highlight{
     color:var(--highlight);
 }
-
-.bracket{
-    margin: 0 25px;
+.indented{
+    margin:20px 0 0 40px;
+    font-size: 20px;
 }
-
 #header {
     background: var(--dark-bg);
     padding:10px;
     z-index: 1;
     border-bottom: 2px solid var(--highlight);
 }
-
 #header-links {
     float: right;
     margin-right:10px
 }
-
 #home-link {
     margin-left: 10px;
 }
-
 #footer {
     background: var(--dark-bg);
     padding: 10px;
@@ -113,11 +104,9 @@ a:hover {
     box-shadow: 10px 10px 10px 10px var(--dark-bg-complement);
     z-index: 1;
 }
-
 #front-matter h1 {
     margin: 5px 0;
 }
-
 #front-matter p {
     margin: 10px 0;
     color:var(--highlight);
@@ -141,16 +130,13 @@ a:hover {
 #about-front-matter::-webkit-scrollbar{
     display: none;
 }
-
 #about-front-matter p {
     margin: 24px;
     text-align: justify;
 }
-
 #ranger-box img{
     width:100%;
 }
-
 #ranger-box{
     display: flex;
     flex-direction: column;
@@ -158,7 +144,6 @@ a:hover {
     width:100%;
     margin:0 auto;
 }
-
 #ellipsis{
     text-align: center;
     font-size: 64px;
@@ -172,34 +157,87 @@ a:hover {
 
 /************************************/
 .contact-front-matter{
-    /* line-height: 1.5; */
-    /* width:75%; */
-    /* height: 50vh; */
-    /* margin: 0 auto 10%; */
-    /* text-align: left; */
     background:var(--dark-bg);
     border-radius: 15px;
     box-shadow: 10px 10px 10px 10px var(--dark-bg-complement);
     z-index: 1;
-    /* overflow: scroll; */
-    /* font-size: 20px; */
 }
-
 #contact-box{
     display:flex;
     flex:1;
 }
-
 #contact-left{
     margin: 5% 5% 10% 5%;
     flex:1;
     width:50%;
 }
-#contact-right{
-    flex:1;
-    margin: 5% 5% 10% 5%;
-    width:50%;
+#crane{
+    -webkit-filter:invert(85%); 
+    filter:invert(85%);
+    
+    width:20%;
+    float: left;
 }
+#contact-left-wrapper{
+    display: flex;
+    flex-direction: column;
+    width:90%;
+    height:100%;
+    margin: 0 auto;
+}
+#contact-info{
+    margin: auto 0 10% 0;
+    text-align: right;
+    line-height: 1.5em;
+    width:100%;
+}
+#contact-subtext{
+    color:var(--highlight);
+    text-align: center;
+    margin: 2%;
+}
+#contact-passage{
+    line-height: 1.5em;
+    text-align: justify;
+    font-size: 20px;
+}
+#contact-right{
+    margin: 5% 5% 10% 5%;
+    flex:1;
+    width:50%;
+    flex-direction: column;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+#contact-box h2{
+    margin-top:2%;
+    text-align: center;
+}
+#compose{
+    width:90%;
+    flex:1;
+    flex-grow: 1;
+    margin: 2% auto 0 auto;
+    resize: none;
+    color: #000000;
+    background-color: #BCC0C4;
+    font-size: 18px;
+}
+#submit{
+    height:30px;
+    width:25%;
+    margin: 2% auto;
+    background-color: var(#BCC0C4);
+    font-weight: bold;
+    border:none;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+#submit:hover{
+    background-color:var(--highlight);
+}
+
 
 /************************************/
 
@@ -238,12 +276,25 @@ a:hover {
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
     .wrapper{
-        background-position: 0 96%;
+        background-position: 0 97%;
     }
-
     #about-front-matter{
         font-size:12px;
+    }
+    #contact-box{
+        flex-direction: column;
+        align-items: center;
+    }
+    #contact-left{
+        width:90%;
+    }
+    #contact-right{
+        width:90%;
+        height:250px;
+    }
+    #contact-info{
+        margin-top:50px;
     }
 }

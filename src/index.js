@@ -16,9 +16,9 @@ app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "../templates"));
 hbs.registerPartials(path.join(__dirname, "../templates/partials"));
 
-mongoose.connect(process.env.MONGODB_URL, 
-    {useNewUrlParser:true, useUnifiedTopology:true}
-);
+// mongoose.connect(process.env.MONGODB_URL, 
+//     {useNewUrlParser:true, useUnifiedTopology:true}
+// );
 
 app.get("/", (req, res) => {
     res.render("home");

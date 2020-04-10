@@ -284,6 +284,41 @@ a:hover {
     z-index: 1;
 }
 /************************************/
+#blog-front-matter{
+    background:var(--dark-bg);
+    display: flex;
+    flex:1;
+    margin: 2.5% 2.5% 10% 2.5%;
+    box-shadow: 10px 10px 10px 10px var(--dark-bg-complement);
+    border-radius: 15px;
+}
+#blog-posts{
+    flex:1;
+}
+#blog-post{
+    flex:4; 
+}
+/************************************/
+#blog-compose-wrapper{
+    padding:0.5%;
+    background:var(--dark-bg);
+    box-shadow: 10px 10px 10px 10px var(--dark-bg-complement);
+    border-radius: 15px;
+    margin: 0 auto;
+    z-index: 1;
+}
+#blog-compose{
+    display: flex;
+    flex-direction: column;
+}
+#blog-compose button{
+    width:50%;
+    margin: 24px auto 0 auto;
+}
+#blog-compose textarea{
+    margin-top: 12px;
+}
+/************************************/
 
 @media (max-width: 500px) {
     #header {

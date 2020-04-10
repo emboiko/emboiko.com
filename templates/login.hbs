@@ -1,0 +1,13 @@
+{{>html_header}}
+<div class="wrapper blog">
+{{>header}}
+<div id="blog-compose-wrapper">
+    <form action="/process_login" method="POST">
+        <input type="text" name="username" placeholder="username">
+        <input type="text" name="password" placeholder="password">
+        <button>Login</button>
+    </form>
+</div>
+{{>footer}}
+</div>
+{{>html_footer}}

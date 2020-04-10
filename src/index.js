@@ -3,8 +3,8 @@ const express = require("express");
 const helmet = require("helmet");
 const hbs = require("hbs");
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
 const messageEmail = require("./email/email");
+require("./db/mongoose");
 
 const app = express();
 
@@ -15,10 +15,6 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "../templates"));
 hbs.registerPartials(path.join(__dirname, "../templates/partials"));
-
-// mongoose.connect(process.env.MONGODB_URL, 
-//     {useNewUrlParser:true, useUnifiedTopology:true}
-// );
 
 app.get("/", (req, res) => {
     res.render("home");

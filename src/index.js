@@ -7,11 +7,9 @@ const flash = require("express-flash");
 const session = require("express-session");
 const methodOverride = require("method-override");
 const messageEmail = require("./email/email");
-const User = require("./models/user");
 const { initializePassport, authenticated, notAuthenticated } = require("./auth/passport");
-const initializeMongoose = require("./db/mongoose");
+require("./db/mongoose");
 
-initializeMongoose();
 initializePassport(passport);
 
 const app = express();

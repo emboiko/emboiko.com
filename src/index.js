@@ -2,15 +2,31 @@ const path = require("path");
 const express = require("express");
 const helmet = require("helmet");
 const hbs = require("hbs");
-const bodyParser = require("body-parser");
+const passport = require("passport");
+const flash = require("express-flash");
+const session = require("express-session");
+const methodOverride = require("method-override");
 const messageEmail = require("./email/email");
-require("./db/mongoose");
+const User = require("./models/user");
+const { initializePassport, authenticated, notAuthenticated } = require("./auth/passport");
+const initializeMongoose = require("./db/mongoose");
+
+initializeMongoose();
+initializePassport(passport);
 
 const app = express();
-
 app.use(helmet());
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
+app.use(flash());
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(methodOverride("_method"));
 
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "../templates"));
@@ -42,8 +58,8 @@ app.post("/contact", (req, res) => {
 
     const message = req.body.compose;
     messageEmail(email, name, message);
-    
-    res.render("submitted",{message:"Message submitted. We will get back to you in less than 24 hours"});
+
+    res.render("submitted", { message: "Message submitted. We will get back to you in less than 24 hours" });
 });
 
 app.get("/signup", (req, res) => {
@@ -57,12 +73,24 @@ app.get("/blog/:id", (req, res) => {
     res.render("blogpost");
 });
 
-app.get("/compose", (req, res) => {
+app.get("/compose", authenticated, (req, res) => {
     res.render("compose");
 });
 
-app.get("/login", (req, res) => {
+app.get("/login", notAuthenticated, (req, res) => {
     res.render("login");
+});
+app.post("/login", notAuthenticated, passport.authenticate("local", {
+    successRedirect: "/compose",
+    failureRedirect: "/login",
+    failureFlash: true
+}));
+app.get("/logout", (req, res) => {
+    res.render("logout")
+})
+app.delete("/logout", (req, res) => {
+    req.logOut();
+    res.redirect("/login");
 });
 
 app.get("*", (req, res) => {

@@ -265,9 +265,8 @@ a:hover {
 
 #signup-form{
     flex:1;
-    width: 625px;
-    height: 600px;
-    margin: 5% auto;
+    width: 40%;
+    margin: 2% auto 15% auto;
     z-index: 1;
     border: none;
     background-color: var(--dark-bg);

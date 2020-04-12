@@ -6,16 +6,19 @@
         <div id="blog-sidebar" class="box">
             <h3>Previous</h3>
             <ul>
-                <li><a href="#">Blog1</a></li>
-                <li><a href="#">Blog1</a></li>
-                <li><a href="#">Blog1</a></li>
-                <li><a href="#">Blog1</a></li>
-                <li><a href="#">Blog1</a></li>
-                <li><a href="#">Blog1</a></li>
+                {{#each posts}}
+                <li><a href="http://localhost:3000/blog/{{this._id}}">{{this.title}}</a></li>
+                {{/each}}
             </ul>
         </div>
-        <div id="blog-main" class="box">
 
+        <div id="blog-main" class="box">
+            <h1 id="blog-title" class="highlight">
+                {{latest.title}}
+            </h1>
+            <div id="blog-body">
+                {{{latest.body}}}
+            </div>
         </div>
     </div>
     {{>footer}}

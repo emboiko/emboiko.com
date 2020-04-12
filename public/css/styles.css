@@ -60,13 +60,13 @@ p {
 }
 a{
     text-decoration: none;
-    
+    color:var(--light-text);
 }
 a:visited{
-    color:var(--light-text)
+    color:var(--light-text);
 }
 a:hover {
-    color: var(--highlight)
+    color: var(--highlight);
 }
 #header a {
     color: var(--light-text);
@@ -76,6 +76,7 @@ a:hover {
 #header a:hover {
     background-color: rgb(0, 255, 149);
     color:var(--dark-bg);
+    font-weight: bold;
 }
 .highlight{
     color:var(--highlight);
@@ -165,48 +166,50 @@ img:last-child {
     letter-spacing: 12px;
 }
 /************************************/
-#contact-box{
-    display:flex;
+#contact-wrapper{
     flex:1;
+    display:flex;
+}
+.contacts {
+    flex:1;
+    height: 70vh;
+    margin: 2% 5%;
+    min-height: 500px;
 }
 #contact-left{
-    margin: 5% 5% 10% 5%;
-    flex:1;
-    width:50%;
-}
-#crane{
-    -webkit-filter:invert(80%); 
-    filter:invert(80%);
-    width:20%;
-    float: left;
-}
-#contact-left-wrapper{
-    display: flex;
+    display:flex;
     flex-direction: column;
-    width:90%;
-    height:100%;
-    margin: 0 auto;
+    overflow: scroll;
+    align-items: center;
+    justify-content: space-between;
 }
-#contact-info{
-    margin: auto 0 10% 0;
-    text-align: right;
-    line-height: 1.5em;
-    width:100%;
+.contact-head{
+    text-align: center;
+    padding:16px;
+}
+#contact-left::-webkit-scrollbar{
+    display: none;
+}
+#contact-links{
+    align-self: flex-end;
+    padding-right: 5%;
 }
 #contact-subtext{
     color:var(--highlight);
     text-align: center;
-    margin: 2%;
 }
 #contact-passage{
     line-height: 1.5em;
     text-align: justify;
     font-size: 20px;
+    padding:5%;
 }
-#contact-right{
-    margin: 5% 5% 10% 5%;
-    flex:1;
-    width:50%;
+#crane{
+    -webkit-filter:invert(80%); 
+    filter:invert(80%);
+    width:20%;
+    align-self: flex-start;
+    margin-left: 5%;
 }
 #contact-right form{
     height: 100%;
@@ -222,10 +225,6 @@ img:last-child {
     font-size: 22px;
     background-color: var(--greyish);
     border: none;
-}
-#contact-box h2{
-    margin-top:2%;
-    text-align: center;
 }
 #contact-compose{
     width:90%;
@@ -288,6 +287,7 @@ img:last-child {
     margin-right: 4%;
     padding: 12px;
     overflow: scroll;
+    text-align: center;
 }
 #blog-sidebar::-webkit-scrollbar{
     display: none;
@@ -303,9 +303,13 @@ img:last-child {
     padding:4px;
 }
 #blog-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     flex:5;
     height: 90%;
     overflow: scroll;
+    padding:20px;
 }
 #blog-main::-webkit-scrollbar{
     display: none;
@@ -358,6 +362,15 @@ img:last-child {
     .highlight {
         margin:0;
     }
+    #blog-box{
+        flex-direction: column-reverse;
+    }
+    #blog-main{
+        margin-bottom: 5%;
+    }
+    #blog-sidebar{
+        margin:0;
+    }
 }
 @media (max-width: 1024px) {
     .wrapper{
@@ -375,16 +388,12 @@ img:last-child {
         justify-content: space-between;
         align-items: center;
     }
-    #contact-box{
+    #contact-wrapper{
         flex-direction: column;
         align-items: center;
     }
-    #contact-left{
-        width:90%;
-    }
-    #contact-right{
-        width:90%;
-        height:350px;
+    .contacts{
+        width: 90%;
     }
     #contact-info{
         margin-top:50px;

@@ -1,9 +1,14 @@
 {{>html_header}}
 <div class="wrapper blog">
-{{>header}}
-<div id="blog-front-matter">
-    
-</div>
-{{>footer}}
+    {{>header}}
+    <div id="blog-front-matter">
+        <h1 id="blog-title" class="highlight">
+            {{title}}
+        </h1>
+        <div id="blog-body">
+            {{{body}}}
+        </div>
+    </div>
+    {{>footer}}
 </div>
 {{>html_footer}}

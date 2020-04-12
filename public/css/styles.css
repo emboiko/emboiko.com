@@ -11,7 +11,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 .home{
     background: url("../img/home.jpg") no-repeat; 
 }
@@ -30,7 +29,6 @@
 .blog{
     background: url("../img/blog.jpg") no-repeat; 
 }
-
 .wrapper {
     font-family: "Coda",Arial, Helvetica, sans-serif;
     background-size: contain;
@@ -51,7 +49,6 @@
     z-index: 0;
     background-color: rgba(33, 47, 61, 0.30);
 }
-
 p {
     font-family: "Raleway",Arial, Helvetica, sans-serif;
 }
@@ -103,7 +100,6 @@ a:hover {
     padding:12px;
 }
 /************************************/
-
 #front-matter {
     width:500px;
     margin: 25px auto 75px auto;
@@ -120,9 +116,7 @@ a:hover {
     margin: 10px 0;
     color:var(--highlight);
 }
-
 /************************************/
-
 #about-front-matter {
     display: flex;
     line-height: 1.5;
@@ -144,17 +138,17 @@ a:hover {
     margin: 24px;
     text-align: justify;
 }
-#ranger-box img{
-    width:100%;
-    flex:1;
-}
 #about-box{
-    flex:1;
+    display:flex;
+    flex-direction: column;
 }
-#ranger-box{
-    flex:1;
-    display: flex;
-    flex-direction: column;    
+img:first-child {
+    width:45%;
+    margin:16px auto;
+    border-radius: 15px;
+}
+img:last-child {
+    width:100%;
 }
 .ellipsis{
     text-align: center;
@@ -166,7 +160,6 @@ a:hover {
     padding: 12px;
     letter-spacing: 12px;
 }
-
 /************************************/
 .contact-front-matter{
     background:var(--dark-bg);
@@ -186,7 +179,6 @@ a:hover {
 #crane{
     -webkit-filter:invert(80%); 
     filter:invert(80%);
-    
     width:20%;
     float: left;
 }
@@ -259,10 +251,7 @@ a:hover {
 .submit:hover{
     background-color:var(--highlight);
 }
-
-
 /************************************/
-
 #signup-form{
     flex:1;
     width: 40%;
@@ -272,7 +261,6 @@ a:hover {
     background-color: var(--dark-bg);
     border-radius: 15px;
 }
-
 /************************************/
 #notfound-front-matter {
     width:500px;
@@ -289,16 +277,13 @@ a:hover {
 #blog-front-matter{
     background:var(--dark-bg);
     display: flex;
+    flex-direction: column;
+    align-items: center;
     flex:1;
     margin: 2.5% 2.5% 10% 2.5%;
     box-shadow: 10px 10px 10px 10px var(--dark-bg-complement);
     border-radius: 15px;
-}
-#blog-posts{
-    flex:1;
-}
-#blog-post{
-    flex:4; 
+    padding:50px;
 }
 /************************************/
 #blog-compose-wrapper{
@@ -321,7 +306,6 @@ a:hover {
     margin-top: 12px;
 }
 /************************************/
-
 @media (max-width: 500px) {
     #header {
         display: flex;
@@ -359,7 +343,6 @@ a:hover {
     }
 
 }
-
 @media (max-width: 1024px) {
     .wrapper{
         background-position: 0 97%;

@@ -1,32 +1,35 @@
 {{>html_header}}
 <div class="wrapper contact">
-{{>header}}
-<div id="contact-box">
-    <div id="contact-left" class="contact-front-matter">
-        <div id="contact-left-wrapper">
-            <h2>Get in touch with me</h2>
-            <p id="contact-subtext">I can build the website you want.</p>
-            <p id="contact-passage">
-                Whether it's application software, a static webpage, or an online store for your business- the craftsmanship I'll put into the creation and continuous delivery of your product is outstanding. My pursuit is excellence, and I'm available for hire or cooperation. Reach out, and I'll contact you in less than 24 hours.
-            </p>
-            <div id="contact-info">
-                <p>Ed@emboiko.com</p>
-                <p>https://github.com/emboiko</p>
+    {{>header}}
+    <div id="contact-box">
+        <div id="contact-left" class="box">
+            <div id="contact-left-wrapper">
+                <h2>Get in touch with me</h2>
+                <p id="contact-subtext">I can build the website you want.</p>
+                <p id="contact-passage">
+                    Whether it's application software, a static webpage, or an online store for your business- the
+                    craftsmanship I'll put into the creation and continuous delivery of your product is outstanding. My
+                    pursuit is excellence, and I'm available for hire or cooperation. Reach out, and I'll contact you in
+                    less than 24 hours.
+                </p>
+                <div id="contact-info">
+                    <p>Ed@emboiko.com</p>
+                    <p>https://github.com/emboiko</p>
+                </div>
+                <img id="crane" src="/img/crane.png" alt="crane">
             </div>
-            <img id="crane" src="/img/crane.png" alt="crane">
+        </div>
+
+        <div id="contact-right" class="box">
+            <form action="/contact" method="POST">
+                <h2>Write me a message</h2>
+                <input type="text" name="name" id="message-name" placeholder="Name">
+                <input type="text" name="email" id="message-email" placeholder="Email">
+                <textarea name="compose" id="contact-compose" required></textarea>
+                <button class="submit">Submit</button>
+            </form>
         </div>
     </div>
-
-    <div id="contact-right" class="contact-front-matter">
-        <form action="/contact" method="POST">
-            <h2>Write me a message</h2>
-            <input type="text" name="name" id="message-name" placeholder="Name">
-            <input type="text" name="email" id="message-email" placeholder="Email">
-            <textarea name="compose" id="compose" required></textarea>
-            <button class="submit">Submit</button>
-        </form>
-    </div>
-</div>
-{{>footer}}
+    {{>footer}}
 </div>
 {{>html_footer}}

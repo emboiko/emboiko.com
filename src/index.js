@@ -60,6 +60,26 @@ app.get("/signup", (req, res) => {
     res.render("signup");
 });
 
+app.get("/blog", async (req, res) => {
+    const posts = await Post.find().sort({ createdAt: -1 });
+    const latest = posts.shift();
+    res.render("blog", { latest, posts });
+});
+
+app.get("/blog/compose", authenticated, (req, res) => {
+    res.render("compose");
+});
+app.post("/blog/compose", authenticated, async (req, res) => {
+    const post = new Post(req.body);
+    try {
+        await post.save((err, post) => {
+            res.redirect(`/blog/${post._id}`);
+        });
+    } catch (err) {
+        res.status(400).send(err);
+    }
+});
+
 app.get("/blog/:id", async (req, res) => {
     const _id = req.params.id;
     try {
@@ -72,23 +92,6 @@ app.get("/blog/:id", async (req, res) => {
         });
     } catch (err) {
         res.render("notfound");
-    }
-});
-app.get("/blog", (req, res) => {
-    res.render("blog");
-});
-
-app.get("/compose", authenticated, (req, res) => {
-    res.render("compose");
-});
-app.post("/compose", authenticated, async (req, res) => {
-    const post = new Post(req.body);
-    try {
-        await post.save((err, post) => {
-            res.redirect(`/blog/${post._id}`);
-        });
-    } catch (err) {
-        res.status(400).send(err);
     }
 });
 

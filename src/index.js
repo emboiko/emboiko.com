@@ -88,24 +88,58 @@ app.get("/blog/:id", async (req, res) => {
         res.render("blogpost", {
             title: post.title,
             body: post.body,
-            created: post.createdAt
+            created: post.createdAt,
+            _id
         });
     } catch (err) {
         res.render("notfound");
     }
 });
+app.patch("/blog/:id", authenticated, async (req, res) => {
+    const updates = Object.keys(req.body);
+    console.log(updates);
+    console.log("Called")
+
+    try {
+        const post = await Post.findOne({ _id: req.params.id });
+
+        if (!post) return res.status(404).render("notfound");
+
+        updates.forEach((update) => post[update] = req.body[update]);
+
+        await post.save();
+        res.redirect(`/blog/${post._id}`)
+    } catch (err) {
+        res.status(400).send(err);
+    }
+});
+app.get("/blog/:id/edit", authenticated, async (req, res) => {
+    const _id = req.params.id;
+    try {
+        const post = await Post.findOne({ _id })
+        if (!post) return res.render("notfound");
+        res.render("blogpost_edit", {
+            title: post.title,
+            body: post.body,
+            created: post.createdAt,
+            _id
+        });
+    } catch (err) {
+        res.render("notfound");
+    }
+})
 
 app.get("/login", notAuthenticated, (req, res) => {
     res.render("login");
 });
 app.post("/login", notAuthenticated, passport.authenticate("local", {
-    successRedirect: "/compose",
+    successRedirect: "/",
     failureRedirect: "/login",
     failureFlash: true
 }));
 app.get("/logout", (req, res) => {
     res.render("logout")
-})
+});
 app.delete("/logout", (req, res) => {
     req.logOut();
     res.redirect("/login");

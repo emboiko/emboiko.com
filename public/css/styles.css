@@ -58,15 +58,16 @@
 p {
     font-family: "Raleway",Arial, Helvetica, sans-serif;
 }
+ul {
+    list-style: none;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+}
 a{
     text-decoration: none;
-    color:var(--light-text);
+    color:var(--highlight);
 }
 a:visited{
-    color:var(--light-text);
-}
-a:hover {
-    color: var(--highlight);
+    color:var(--highlight);
 }
 #header a {
     color: var(--light-text);
@@ -147,12 +148,12 @@ a:hover {
     display:flex;
     flex-direction: column;
 }
-img:first-child {
+#about-box img:first-child {
     width:45%;
     margin:16px auto;
     border-radius: 15px;
 }
-img:last-child {
+#about-box img:last-child {
     width:100%;
 }
 .ellipsis{
@@ -295,10 +296,6 @@ img:last-child {
 #blog-sidebar h3 {
     margin-bottom: 16px;
 }
-#blog-sidebar ul {
-    list-style: none;
-    font-family: "Raleway",Arial, Helvetica, sans-serif;
-}
 #blog-sidebar li{
     padding:4px;
 }
@@ -310,6 +307,10 @@ img:last-child {
     height: 90%;
     overflow: scroll;
     padding:20px;
+}
+/************************************/
+#blog-body a {
+    color:var(--highlight);
 }
 #blog-main::-webkit-scrollbar{
     display: none;
@@ -329,6 +330,8 @@ img:last-child {
 }
 #blog-compose textarea{
     margin-top: 12px;
+    width:500px;
+    height: 250px;
 }
 /************************************/
 @media (max-width: 500px) {
@@ -380,14 +383,6 @@ img:last-child {
         font-size: 24px;
         margin: 0 auto;
     }
-    #about-front-matter{
-        font-size:14px;
-        flex:1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-    }
     #contact-wrapper{
         flex-direction: column;
         align-items: center;
@@ -403,5 +398,12 @@ img:last-child {
         border-radius: 0;
         flex:1;
         margin: 0 auto;
+    }
+}
+@media (min-width:1920px) {
+    #about-box img:last-child {
+        width:80%;
+        margin: 16px auto;
+        border-radius: 15px;
     }
 }

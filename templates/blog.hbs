@@ -14,7 +14,9 @@
 
         <div id="blog-main" class="box">
             <h1 id="blog-title" class="highlight">
-                {{latest.title}}
+                <a href="/blog/{{latest._id}}">
+                    {{latest.title}}
+                </a>
             </h1>
             <div id="blog-body">
                 {{{latest.body}}}

@@ -3,11 +3,19 @@
     {{>header}}
     <div id="blog-compose-wrapper" class="box">
         <form id="blog-compose" action="/blog/compose" method="POST">
+
             <input type="text" name="title" id="compose-title">
             <textarea name="body" id="compose-body"></textarea>
             <button>Submit</button>
         </form>
+        <button id="preview">Preview</button>
+        <div id="blog-preview">
+
+        </div>
     </div>
     {{>footer}}
 </div>
+
+<script src="/js/blog.js"></script>
+
 {{>html_footer}}

@@ -85,6 +85,16 @@ a:visited{
 .bracket{
     margin: 0 5%;
 }
+.ellipsis{
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    width:50%;
+    margin: 0 auto;
+    line-height: 24px;
+    padding: 12px;
+    letter-spacing: 12px;
+}
 #header {
     background: var(--dark-bg);
     padding:10px;
@@ -156,15 +166,60 @@ a:visited{
 #about-box img:last-child {
     width:100%;
 }
-.ellipsis{
-    text-align: center;
-    font-size: 48px;
-    font-weight: bold;
+/************************************/
+#portfolio-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 15px auto 15% auto;
+    width: 90vw;
+}
+#portfolio-wrapper::-webkit-scrollbar{
+    display: none;
+}
+.project{
+    padding:24px;
+    margin:24px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.project-description{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+}
+#my-projects{
+    margin:24px auto 0 auto;
+    color: var(--dark-bg);
+    font-size: 36px;
+}
+.project a:hover{
+    text-decoration: underline;
+}
+.pytube{
+    margin: auto 0;
+    padding-right: 2px;
+}
+#visual-sorts{
+    display:flex;
+}
+.visual-sorts{
     width:50%;
-    margin: 0 auto;
-    line-height: 24px;
-    padding: 12px;
-    letter-spacing: 12px;
+}
+.chat{
+    height:300px;
+}
+.pluvius{
+    height:400px;
+}
+.maze{
+    width:400px;
+}
+.portcullis{
+    height: 300px;
+}
+.language{
+    width:60px;
+    margin-top: 12px;
 }
 /************************************/
 #contact-wrapper{
@@ -375,10 +430,18 @@ a:visited{
         margin:0;
     }
 }
-@media (max-width: 1024px) {
-    .wrapper{
-        background-position: 0 97%;
+@media (max-width: 650px) {
+    .project-images img{
+        width:300px;
     }
+    #visual-sorts{
+        flex-direction: column;
+    }
+    #visual-sorts img{
+        margin-top: 12px;
+    }
+}
+@media (max-width: 1024px) {
     .ellipsis{
         font-size: 24px;
         margin: 0 auto;
@@ -397,6 +460,17 @@ a:visited{
         width:100%;
         border-radius: 0;
         flex:1;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 1500px) {
+    .project{
+        flex-direction: column;
+    }
+    .project-images{
+        margin:0 auto;
+    }
+    #visual-sorts{
         margin: 0 auto;
     }
 }

@@ -1,16 +1,33 @@
 {{>html_header}}
 <div class="wrapper portfolio">
     {{>header}}
-    <h2 id="my-projects">My Projects</h2>
+    <img class="flipped" src="img/portfolio.jpg">
+    <div class="box" id="my-projects">
+        <h2>Projects</h2>
+        <hr>
+    </div>
     <div id="portfolio-wrapper">
         <div class="project box">
             <div class="project-description">
                 <a href="https://github.com/emboiko/CopyTo-MoveTo" target="_blank">CopyTo-MoveTo</a>
                 <p>Windows File Manager</p>
                 <img class="language" src="img/python.png" alt="python">
+                <p class="project-passage">
+                    Copyto-Moveto is a GUI utility for making the process of copying and moving files and/or directories
+                    more explicit, and is intended to be used alongside Windows Explorer or by itself. It is built with
+                    Python +
+                    Tkinter/TCL, made for Windows platforms, and is dependency free. Support for Linux and Mac may come
+                    in the future.
+                    <br>
+                    <br>
+                    Ufd &amp; Socket Singleton are submodules of CopyTo-MoveTo. Therefore, only one instance of the
+                    application is allowed to exist at a time. Subsequent calls to the program pass their arguments to
+                    the main process and exit.
+                </p>
             </div>
             <div id="ctmt" class="project-images">
-                <img class="ctmt" src="img/portfolio/CopyTo-MoveTo.png" alt="CopyTo-MoveTo">
+                <img class="ctmt" src="img/portfolio/ctmt.png" alt="CopyTo-MoveTo">
+                <img class="ctmt" src="img/portfolio/ctmt2.png" alt="CopyTo-MoveTo">
             </div>
         </div>
 
@@ -20,6 +37,14 @@
                 <a href="https://github.com/emboiko/Ufd" target="_blank">Ufd</a>
                 <p>Unopinionated/Universal file dialog</p>
                 <img class="language" src="img/python.png" alt="python">
+                <p class="project-passage">
+                    This program was [primarily] created to work around the limitations of built-in filedialogs included
+                    in dotNET, Tcl, and other GUI libraries. Standard dialogs do not support multi-selection of both
+                    files and directories all from a single dialog. Ufd doesn't care what kind of dialog it's serving
+                    as. You get to deal with any ambiguities in your own way. Want to select 3 directories and 2 files
+                    from the same dialog, and have their paths returned as a list? No worries. Perhaps you'd prefer to
+                    corral the user into selecting a single file instead- simply modify the constructor accordingly.
+                </p>
             </div>
             <div id="ufd" class="project-images">
                 <img class="ufd" src="img/portfolio/Ufd.png" alt="Ufd">
@@ -32,6 +57,11 @@
                 <a href="https://github.com/emboiko/Socket_Singleton" target="_blank">Socket Singleton</a>
                 <p>Allow a single instance of a python application to run at one time.</p>
                 <img class="language" src="img/python.png" alt="python">
+                <p class="project-passage">
+                    Socket-based, single-instance Python applications with a clean interface
+                    <br>
+                    No lockfiles, mutexes, dependencies, or tomfoolery
+                </p>
             </div>
             <div id="singleton" class="project-images">
                 <img src="img/portfolio/singleton.png" alt="Socket-Singleton">
@@ -54,6 +84,12 @@
                 <a href="https://github.com/emboiko/Visual-Sorts" target="_blank">Visual-Sorts</a>
                 <p>See and hear the differences in sorting algorithms</p>
                 <img class="language" src="img/python.png" alt="python">
+                <p class="project-passage">
+                    Featuring bubble, cocktail, gnome, insertion, selection, and shell sorts
+                    <br>
+                    <br>
+                    Inspired by <a href="https://www.youtube.com/watch?v=kPRA0W1kECg" target="_blank">this video</a>
+                </p>
             </div>
             <div id="visual-sorts" class="project-images">
                 <img class="visual-sorts" src="img/portfolio/Visual-Sorts1.png" alt="Visual-Unsorted">
@@ -66,6 +102,10 @@
                 <a href="https://github.com/emboiko/Task-Man" target="_blank">Task-Man</a>
                 <p>RESTful CRUD backend for a note-taking interface</p>
                 <img class="language" src="img/javascript.png" alt="javascript">
+                <p class="project-passage">
+                    This Express API features a JWT-based login system with MongoDB, bcrypt, file upload with Multer,
+                    and a Jest test suite.
+                </p>
             </div>
             <div id="taskman" class="project-images">
                 <img src="img/portfolio/task.png" alt="task">
@@ -77,6 +117,7 @@
                 <a href="https://github.com/emboiko/Shortbus_Chat" target="_blank">Shortbus</a>
                 <p>Where important conversations happen</p>
                 <img class="language" src="img/javascript.png" alt="javascript">
+                <p class="project-passage">(Beta) Chatrooms with Express &amp; Socket.io</p>
             </div>
             <div id="shortbus-chat" class="project-images">
                 <img class="chat" src="img/portfolio/chat1.png" alt="chatroom">

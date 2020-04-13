@@ -359,7 +359,7 @@ a:visited{
     display: flex;
     height: 75vh;
     width:95%;
-    margin: 0 auto 50px auto;
+    margin: 20px auto 50px auto;
 }
 #blog-sidebar{
     flex:1;
@@ -397,7 +397,7 @@ a:visited{
 /************************************/
 #blog-compose-wrapper{
     padding:0.5%;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 #blog-compose{
     display: flex;

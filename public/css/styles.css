@@ -134,9 +134,8 @@ a:visited{
 /************************************/
 #front-matter {
     width:500px;
-    margin: 0 auto;
+    margin: 100px auto 0 auto;
     text-align: center;
-    z-index: 1;
 }
 #front-matter h1 {
     margin: 5px 0;
@@ -469,6 +468,20 @@ a:visited{
         width:80%;
         margin: 0 auto;
     }
+    #about-box p {
+        font-size: 12px;
+    }
+    #about-front-matter{
+        margin: auto;
+        height: 65vh;
+    }
+    #portfolio-wrapper{
+        margin:15px 0 15% 0;
+        width: 100%;
+    }
+    .project-description p {
+        text-align: left;
+    }
 }
 @media (max-width: 650px) {
     .project-images img{
@@ -501,6 +514,13 @@ a:visited{
         border-radius: 0;
         flex:1;
         margin: 0 auto;
+    }
+    #visual-sorts{
+        flex-direction: column;
+    }
+    .visual-sorts{
+        width:80%;
+        margin: 20px auto 0 auto;
     }
 }
 @media (max-width: 1500px) {

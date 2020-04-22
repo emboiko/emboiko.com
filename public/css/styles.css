@@ -248,7 +248,6 @@ a:visited{
 }
 /************************************/
 #contact-wrapper{
-    /* flex:1; */
     display:flex;
 }
 .contacts {
@@ -449,9 +448,6 @@ a:visited{
     #notfound-front-matter{
         width:300px;
     }
-    #signup-front-matter{
-        width:300px;
-    }
     .highlight {
         margin:0;
     }
@@ -510,9 +506,8 @@ a:visited{
         margin-top:50px;
     }
     #signup-form{
-        width:100%;
+        min-width:100vw;
         border-radius: 0;
-        flex:1;
         margin: 0 auto;
     }
     #visual-sorts{

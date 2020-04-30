@@ -15,12 +15,11 @@
                 <p class="project-passage">
                     Copyto-Moveto is a GUI utility for making the process of copying and moving files and/or directories
                     more explicit, and is intended to be used alongside Windows Explorer or by itself. It is built with
-                    Python +
-                    Tkinter/TCL, made for Windows platforms, and is dependency free. Support for Linux and Mac may come
+                    Python + Tkinter/TCL, made for Windows platforms, and is [mostly*] dependency free. Support for Linux and Mac may come
                     in the future.
                     <br>
                     <br>
-                    Ufd &amp; Socket Singleton are submodules of CopyTo-MoveTo. Therefore, only one instance of the
+                    *Ufd &amp; Socket Singleton are submodules of CopyTo-MoveTo. Therefore, only one instance of the
                     application is allowed to exist at a time. Subsequent calls to the program pass their arguments to
                     the main process and exit.
                 </p>
@@ -41,10 +40,13 @@
                     This program was [primarily] created to work around the limitations of built-in filedialogs included
                     in dotNET, Tcl, and other GUI libraries. Standard dialogs do not support multi-selection of both
                     files and directories all from a single dialog. Ufd doesn't care what kind of dialog
-                    it's serving
-                    as- you get to deal with any ambiguities in your own way. Want to select 3 directories and 2 files
+                    it's serving as- you get to deal with any ambiguities in your own way. Want to select 3 directories and 2 files
                     from the same dialog, and have their paths returned as a list? No worries. Perhaps you'd prefer to
                     corral the user into selecting a single file instead- simply modify the constructor accordingly.
+                    <br><br>
+                    Packaged with <a href="https://pypi.org/project/Ufd/" target="_blank">PyPi</a>.
+                    <br>
+                    <span class="codeblock">pip install Ufd --upgrade</span> 
                 </p>
             </div>
             <div id="ufd" class="project-images">
@@ -62,6 +64,10 @@
                     Socket-based, single-instance Python applications with a clean interface.
                     <br>
                     No lockfiles, mutexes, dependencies, or tomfoolery.
+                    <br><br>
+                    Packaged with <a href="https://pypi.org/project/Socket-Singleton/" target="_blank">PyPi</a>.
+                    <br>
+                    <span class="codeblock">pip install Socket-Singleton --upgrade</span> 
                 </p>
             </div>
             <div id="singleton" class="project-images">
@@ -117,7 +123,8 @@
                 </p>
             </div>
             <div id="fridge-magnets" class="project-images">
-                <img src="img/portfolio/magnets.png" alt="fridge">
+                <img class="magnets" src="img/portfolio/magnets.png" alt="magnets">
+                <img class="magnets" src="img/portfolio/magnets2.png" alt="fridge">
             </div>
         </div>
 
@@ -127,8 +134,10 @@
                 <p>RESTful CRUD backend for a note-taking interface</p>
                 <img class="language" src="img/javascript.png" alt="javascript">
                 <p class="project-passage">
-                    This Express API features a JWT-based login system with MongoDB, bcrypt, file upload with Multer,
-                    and a Jest test suite.
+                    This JSON-based Express API features a JWT login system with MongoDB Atlas, bcrypt password hashing, file upload using Sharp/Multer,
+                    and a test suite with Jest and Supertest. 
+                    <br><br>
+                    <a href="http://emboiko-task-man.herokuapp.com/">http://emboiko-task-man.herokuapp.com/</a>
                 </p>
             </div>
             <div id="taskman" class="project-images">
@@ -172,7 +181,7 @@
             <div class="project-description">
                 <a href="https://github.com/emboiko/Watch" target="_blank">Watch</a>
                 <p>An imitation of <a href="https://www.npmjs.com/package/nodemon" target="_blank">nodemon</a> for
-                    javascript and python
+                    Javascript and Python
                 </p>
                 <img class="language" src="img/javascript.png" alt="javascript">
                 <p class="project-passage">
@@ -205,7 +214,7 @@
                 <p>Attach a callback function(s) to your door</p>
                 <img class="language" src="img/cpp.png" alt="c++">
                 <p class="project-passage">
-                    Made with Arduino &amp; Python
+                    (Beta) Made with Arduino &amp; Python
                 </p>
             </div>
             <div id="portcullis" class="project-images">

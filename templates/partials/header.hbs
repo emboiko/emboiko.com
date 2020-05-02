@@ -1,6 +1,12 @@
 <div id="header">
     <span id="home-link">
-        <a href="/">Home</a>
+        <a href="/">Home
+        
+        {{#if authed}}
+        *
+        {{/if}}
+
+        </a>
     </span>
     <span id="header-links">
         <a href="/about">About</a>

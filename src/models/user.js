@@ -15,14 +15,9 @@ const userSchema = new mongoose.Schema({
     },
 });
 
-userSchema.statics.findByCredentials = async (username, password, done) => {
-    const user = await User.findOne({ username });
-    if (!user) return done(null, false, { message: "No user with that username." });
-
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return done(null, false, { message: "Incorrect password." });
-
-    return done(null, user);
+userSchema.statics.validateRegistration = async (email, username) => {
+    if (await User.findOne({ email })) throw new Error("Email is already registered.");
+    if (await User.findOne({ username })) throw new Error("Username is taken.");
 }
 
 userSchema.pre("save", async function (next) {

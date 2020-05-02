@@ -100,7 +100,7 @@ app.get("/blog/:id", async (req, res) => {
             authed:req.authed
         });
     } catch (err) {
-        res.render("notfound");
+        res.render("notfound", {authed:req.authed});
     }
 });
 app.patch("/blog/:id", authenticated, async (req, res) => {
@@ -134,7 +134,7 @@ app.get("/blog/:id/edit", authenticated, async (req, res) => {
             authed:req.authed
         });
     } catch (err) {
-        res.render("notfound");
+        res.render("notfound", {authed:req.authed});
     }
 })
 
@@ -151,11 +151,11 @@ app.get("/logout", (req, res) => {
 });
 app.delete("/logout", (req, res) => {
     req.logOut();
-    res.redirect("/login", {authed:req.authed});
+    res.redirect("/login");
 });
 
 app.get("*", (req, res) => {
-    res.status(404).render("notfound");
+    res.status(404).render("notfound", {authed:req.authed});
 });
 
 app.listen(process.env.PORT || 1337);

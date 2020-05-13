@@ -252,14 +252,11 @@ a:visited{
 .chat{
     height:300px;
 }
-.pluvius{
-    height:400px;
-}
 .maze{
     width:400px;
 }
 .portcullis{
-    height: 300px;
+    width:400px;
 }
 /************************************/
 #contact-wrapper{

@@ -258,6 +258,9 @@ a:visited{
 .portcullis{
     width:400px;
 }
+.raycast{
+    width:400px;
+}
 /************************************/
 #contact-wrapper{
     display:flex;

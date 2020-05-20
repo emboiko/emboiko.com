@@ -184,6 +184,9 @@ a:visited{
     width:25px;
     margin-right: 10px;
 }
+.c{
+    width:23px;
+}
 #portfolio-wrapper{
     display: flex;
     flex-direction: column;

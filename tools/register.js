@@ -1,5 +1,5 @@
 ////////////////////////////////
-//Remove me in production ALWAYS
+//Remove me in production always
 ////////////////////////////////
 // app.get("/register", notAuthenticated, (req, res) => {
 //     res.render("register");

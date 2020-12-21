@@ -6,28 +6,36 @@
         <h2>Projects</h2>
         <div class="ruler"></div>
     </div>
+
     <div id="portfolio-wrapper">
         <div class="project box">
             <div class="project-description">
-                <a href="https://github.com/emboiko/CopyTo-MoveTo" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo" src="img/python.png" alt="python">CopyTo-MoveTo</a>
+                <a href="https://github.com/emboiko/CopyTo-MoveTo" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img class="logo"
+                        src="img/python.png" alt="python">CopyTo-MoveTo</a>
                 <p>Windows File Manager</p>
 
                 <p class="project-passage">
-                    Copyto-Moveto is a Windows GUI utility for making the process of copying and moving files and/or
-                    directories
-                    more explicit, and is intended to be used alongside Windows Explorer or by itself. It is built with
-                    Python + Tkinter, compiled to x64 executable with PyInstaller, and is mostly* dependency free.
+                    Copyto-Moveto is a Windows GUI utility for making the process of
+                    copying and moving files and/or directories more explicit, and is
+                    intended to be used alongside Windows Exploreror by itself. It is
+                    built with Python + Tkinter and compiled to x64 executable with
+                    PyInstaller.
                     <br>
                     <br>
-                    *Ufd &amp; Socket Singleton (see below) are former submodules of the project's repository, and are
-                    now pulled in with pip for development. Therefore, only one instance of the
-                    application is allowed to exist at a time. Subsequent calls to the program pass their arguments to
-                    the main process and exit.
+                    *Ufd &amp; Socket Singleton (see below) are former submodules of the
+                    project's repository, and are now pulled in with pip for development.
+                    Therefore, only one instance of the application is allowed to exist at
+                    a time. Subsequent calls to the program pass their arguments to the
+                    main process and exit.
                     <br>
                     <br>
-                    This application uses <a href="https://jrsoftware.org/isinfo.php" target="_blank">Inno Setup
-                        Tools</a> to compile an installation wizard for end
-                    users. This takes the hassle and risk out of managing the registry keys required for the
+                    This application uses
+                    <a href="https://jrsoftware.org/isinfo.php" target="_blank">Inno Setup
+                        Tools</a>
+                    to compile an installation wizard for end
+                    users. This takes the hassle and risk out of managing the registry
+                    keys required for the
                     application's context menu entries.
                 </p>
             </div>
@@ -39,21 +47,24 @@
 
         <div class="project box">
             <div class="project-description">
-
-                <a href="https://github.com/emboiko/Ufd" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo" src="img/python.png" alt="python">Ufd</a>
+                <a href="https://github.com/emboiko/Ufd" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img class="logo"
+                        src="img/python.png" alt="python">Ufd</a>
                 <p>Unopinionated/Universal file dialog</p>
                 <p class="project-passage">
-                    This program was [primarily] created to work around the limitations of built-in filedialogs included
-                    in dotNET, Tcl, and other GUI libraries. Standard dialogs do not generally support multi-selection
-                    of both
+                    This program was [primarily] created to work around the limitations of
+                    built-in filedialogs included in dotNET, Tcl, and other GUI libraries.
+                    Standard dialogs do not generally support multi-selection of both
                     files and directories from a single dialog.
                     <br><br>
-                    Ufd doesn't care what kind of dialog it's serving as- you get to deal with any ambiguities in your
-                    own way. Want to select 3 directories and 2 files
-                    from the same dialog, and have their paths returned as a list? No worries. Perhaps you'd prefer to
-                    corral the user into selecting a single file instead- simply modify the constructor accordingly.
+                    Ufd doesn't care what kind of dialog it's serving as- you get to deal
+                    with any ambiguities in your own way. Want to select 3 directories and
+                    2 files from the same dialog, and have their paths returned as a list?
+                    No worries. Perhaps you'd prefer to corral the user into selecting a
+                    single file instead- simply modify the constructor accordingly.
                     <br><br>
-                    Packaged with <a href="https://pypi.org/project/Ufd/" target="_blank">PyPi</a>.
+                    Packaged with <a href="https://pypi.org/project/Ufd/"
+                        target="_blank">PyPi</a>.
                     <br>
                     <span class="codeblock">pip install Ufd --upgrade</span>
                 </p>
@@ -65,16 +76,19 @@
 
         <div class="project box">
             <div class="project-description">
-
-                <a href="https://github.com/emboiko/Socket_Singleton" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo" src="img/python.png" alt="python">Socket
+                <a href="https://github.com/emboiko/Socket_Singleton" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img class="logo"
+                        src="img/python.png" alt="python">Socket
                     Singleton</a>
                 <p>Allow a single instance of a python application to run at one time.</p>
                 <p class="project-passage">
-                    Socket-based, single-instance Python applications with a clean interface.
+                    Socket-based, single-instance Python applications with a clean
+                    interface.
                     <br>
                     No lockfiles, mutexes, dependencies, or tomfoolery.
                     <br><br>
-                    Packaged with <a href="https://pypi.org/project/Socket-Singleton/" target="_blank">PyPi</a>.
+                    Packaged with <a href="https://pypi.org/project/Socket-Singleton/"
+                        target="_blank">PyPi</a>.
                     <br>
                     <span class="codeblock">pip install Socket-Singleton --upgrade</span>
                 </p>
@@ -86,10 +100,14 @@
 
         <div class="project box">
             <div class="project-description">
-                <a href="https://github.com/emboiko/PyTube-GUI" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo" src="img/python.png" alt="python">PyTube-GUI</a>
+                <a href="https://github.com/emboiko/PyTube-GUI" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img class="logo"
+                        src="img/python.png" alt="python">PyTube-GUI</a>
                 <p>Download a local copy of a YouTube video, or just the audio</p>
                 <p class="project-passage">
-                    Powered by <a href="https://github.com/nficano/pytube" target="_blank">Pytube</a> &amp; <a href="https://www.ffmpeg.org/" target="_blank">ffmpeg</a>
+                    Powered by <a href="https://github.com/nficano/pytube"
+                        target="_blank">Pytube</a> &amp; <a href="https://www.ffmpeg.org/"
+                        target="_blank">ffmpeg</a>
                 </p>
             </div>
             <div id="pytube" class="project-images">
@@ -99,26 +117,35 @@
 
         <div class="project box">
             <div class="project-description">
-                <a href="https://github.com/emboiko/Visual-Sorts" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo" src="img/python.png" alt="python">Visual-Sorts</a>
+                <a href="https://github.com/emboiko/Visual-Sorts" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img class="logo"
+                        src="img/python.png" alt="python">Visual-Sorts</a>
                 <p>See and hear the differences in sorting algorithms</p>
                 <p class="project-passage">
-                    Featuring bubble, cocktail, gnome, insertion, selection, and shell sorts
+                    Featuring bubble, cocktail, gnome, insertion, selection, and shell
+                    sorts
                     <br>
-                    Inspired by <a href="https://www.youtube.com/watch?v=kPRA0W1kECg" target="_blank">this video</a>
+                    Inspired by <a href="https://www.youtube.com/watch?v=kPRA0W1kECg"
+                        target="_blank">this video</a>
                 </p>
             </div>
             <div id="visual-sorts" class="project-images">
-                <img class="visual-sorts" src="img/portfolio/Visual-Sorts1.png" alt="Visual-Unsorted">
-                <img class="visual-sorts" src="img/portfolio/Visual-Sorts2.png" alt="Visual-Sorted">
+                <img class="visual-sorts" src="img/portfolio/Visual-Sorts1.png"
+                    alt="Visual-Unsorted">
+                <img class="visual-sorts" src="img/portfolio/Visual-Sorts2.png"
+                    alt="Visual-Sorted">
             </div>
         </div>
 
         <div class="project box">
             <div class="project-description">
-                <a href="https://github.com/emboiko/pyLatency" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo" src="img/python.png" alt="python">pyLatency</a>
+                <a href="https://github.com/emboiko/pyLatency" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img class="logo"
+                        src="img/python.png" alt="python">pyLatency</a>
                 <p>Visualizer for the shell's ping tool</p>
                 <p class="project-passage">
-                    Continuously report, draw, and optionally log latency from a given hostname on a variable polling interval
+                    Continuously report, draw, and optionally log latency from a given
+                    hostname on a variable polling interval
                 </p>
             </div>
             <div id="pylatency" class="project-images">
@@ -128,12 +155,16 @@
 
         <div class="project box">
             <div class="project-description">
-                <a href="https://github.com/emboiko/JS_Raycast" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo" src="img/javascript.png" alt="javascript">JS_Raycast</a>
-                <p>Raycasting with <a href="https://p5js.org/" target="_blank">p5.js</a></p>
+                <a href="https://github.com/emboiko/JS_Raycast" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img class="logo"
+                        src="img/javascript.png" alt="javascript">JS_Raycast</a>
+                <p>Raycasting with <a href="https://p5js.org/" target="_blank">p5.js</a>
+                </p>
                 <p class="project-passage">
                     A basic implementation of Raycasting in Object Oriented JavaScript.
                     <br>
-                    <a href="https://js-raycast.herokuapp.com/" target="_blank">https://js-raycast.herokuapp.com/</a>
+                    <a href="https://js-raycast.herokuapp.com/"
+                        target="_blank">https://js-raycast.herokuapp.com/</a>
                 </p>
             </div>
             <div id="raycast" class="project-images">
@@ -143,16 +174,23 @@
 
         <div class="project box">
             <div class="project-description">
-                <a href="https://github.com/emboiko/crafticards" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo" src="img/javascript.png" alt="javascript">CraftiCards</a>
-                <p>Guest-list management via <a href="https://www.npmjs.com/package/qrcode" target="_blank">QR-codes</a>
+                <a href="https://github.com/emboiko/crafticards" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img class="logo"
+                        src="img/javascript.png" alt="javascript">CraftiCards</a>
+                <p>Guest-list management via <a
+                        href="https://www.npmjs.com/package/qrcode"
+                        target="_blank">QR-codes</a>
                 </p>
                 <p class="project-passage">
-                    This application features a JWT-based login system, RESTful routing with Express, MongoDB
-                    cloud-storage, and a React.js front-end. <br /> Users can easily create or respond to RSVPs which
+                    This application features a JWT-based login system, RESTful routing
+                    with Express, MongoDB
+                    cloud-storage, and a React.js front-end. <br /> Users can easily
+                    create or respond to RSVPs which
                     have had
                     their URL encoded in a QR-code.
                     <br>
-                    <a href="https://www.crafticards.com/" target="_blank">https://www.crafticards.com/</a>
+                    <a href="https://www.crafticards.com/"
+                        target="_blank">https://www.crafticards.com/</a>
                 </p>
             </div>
             <div id="rsvp" class="project-images">
@@ -162,12 +200,17 @@
 
         <div class="project box">
             <div class="project-description">
-                <a href="https://github.com/emboiko/JS_Mazes" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo" src="img/javascript.png" alt="javascript">JS_Mazes</a>
-                <p>Maze generator with <a href="https://brm.io/matter-js/" target="_blank">matter.js</a> collisions</p>
+                <a href="https://github.com/emboiko/JS_Mazes" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img class="logo"
+                        src="img/javascript.png" alt="javascript">JS_Mazes</a>
+                <p>Maze generator with <a href="https://brm.io/matter-js/"
+                        target="_blank">matter.js</a> collisions</p>
                 <p class="project-passage">
-                    Produce solvable, randomized mazes with a suprise at the end. (WASD controls)
+                    Produce solvable, randomized mazes with a suprise at the end. (WASD
+                    controls)
                     <br>
-                    <a href="https://js-mazes.herokuapp.com/" target="_blank">https://js-mazes.herokuapp.com/</a>
+                    <a href="https://js-mazes.herokuapp.com/"
+                        target="_blank">https://js-mazes.herokuapp.com/</a>
                 </p>
             </div>
             <div id="maze" class="project-images">
@@ -177,14 +220,18 @@
 
         <div class="project box">
             <div class="project-description">
-                <a href="https://github.com/emboiko/Fridge-Magnets" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo" src="img/javascript.png" alt="javascript">Fridge-Magnets</a>
+                <a href="https://github.com/emboiko/Fridge-Magnets" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img class="logo"
+                        src="img/javascript.png" alt="javascript">Fridge-Magnets</a>
                 <p>
                     Anonymous, multiplayer refrigerator
                 </p>
                 <p class="project-passage">
-                    Made with HTML5 canvas &amp; Socket.io - Click and drag to your heart's content.
+                    Made with HTML5 canvas &amp; Socket.io - Click and drag to your
+                    heart's content.
                     <br>
-                    <a href="https://refrigerator-magnets.herokuapp.com/" target="_blank">https://refrigerator-magnets.herokuapp.com/</a>
+                    <a href="https://refrigerator-magnets.herokuapp.com/"
+                        target="_blank">https://refrigerator-magnets.herokuapp.com/</a>
                 </p>
             </div>
             <div id="fridge-magnets" class="project-images">
@@ -195,17 +242,26 @@
 
         <div class="project box">
             <div class="project-description">
-                <a href="https://github.com/emboiko/Task-Man" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo" src="img/javascript.png" alt="javascript">Task-Man</a>
+                <a href="https://github.com/emboiko/Task-Man" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img class="logo"
+                        src="img/javascript.png" alt="javascript">Task-Man</a>
                 <p>RESTful CRUD backend for a note-taking / to-do interface</p>
                 <p class="project-passage">
-                    This JSON-based Express API features a JWT login system with MongoDB Atlas, bcrypt password hashing,
+                    This JSON-based Express API features a JWT login system with MongoDB
+                    Atlas, bcrypt password hashing,
                     file upload using Sharp/Multer,
                     and a test suite with Jest and Supertest.
                     <br><br>
-                    Developed with <a href="https://www.postman.com/" target="_blank">Postman</a> - See full list of
+                    Developed with
+                    <a href="https://www.postman.com/" target="_blank">
+                        Postman
+                    </a>
+                    - See full list of
                     routes in the readme
                     <br><br>
-                    <a href="https://emboiko-task-man.herokuapp.com/">https://emboiko-task-man.herokuapp.com/</a>
+                    <a href="https://emboiko-task-man.herokuapp.com/">
+                        https://emboiko-task-man.herokuapp.com/
+                    </a>
                 </p>
             </div>
             <div id="taskman" class="project-images">
@@ -215,9 +271,13 @@
 
         <div class="project box">
             <div class="project-description">
-                <a href="https://github.com/emboiko/Shortbus_Chat" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo" src="img/javascript.png" alt="javascript">Shortbus</a>
+                <a href="https://github.com/emboiko/Shortbus_Chat" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img class="logo"
+                        src="img/javascript.png" alt="javascript">Shortbus</a>
                 <p>Where important conversations happen</p>
-                <p class="project-passage">(Beta) Chatrooms with <a href="https://expressjs.com/" target="_blank">Express</a> &amp; <a href="https://socket.io/" target="_blank">Socket.io</a>
+                <p class="project-passage">(Beta) Chatrooms with <a
+                        href="https://expressjs.com/" target="_blank">Express</a> &amp; <a
+                        href="https://socket.io/" target="_blank">Socket.io</a>
                     <br>
                     <a href="http://theshortb.us" target="_blank">http://theshortb.us</a>
                 </p>
@@ -229,12 +289,18 @@
 
         <div class="project box">
             <div class="project-description">
-                <a href="https://github.com/emboiko/Watch" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo" src="img/javascript.png" alt="javascript">Watch</a>
-                <p>An imitation of <a href="https://www.npmjs.com/package/nodemon" target="_blank">nodemon</a> for
+                <a href="https://github.com/emboiko/Watch" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img class="logo"
+                        src="img/javascript.png" alt="javascript">Watch</a>
+                <p>An imitation of <a href="https://www.npmjs.com/package/nodemon"
+                        target="_blank">nodemon</a> for
                     Javascript and Python
                 </p>
                 <p class="project-passage">
-                    File-watching made easy with <a href="https://www.npmjs.com/package/chokidar" target="_blank">Chokidar</a> and <a href="https://lodash.com/" target="_blank">Lodash</a>
+                    File-watching made easy with <a
+                        href="https://www.npmjs.com/package/chokidar"
+                        target="_blank">Chokidar</a> and <a href="https://lodash.com/"
+                        target="_blank">Lodash</a>
                 </p>
             </div>
             <div id="watch" class="project-images">
@@ -244,10 +310,14 @@
 
         <div class="project box">
             <div class="project-description">
-                <a href="https://github.com/emboiko/C_Raycast" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo c" src="img/c.png" alt="c">C_Raycast</a>
-                <p>Raycasting with C and <a href="https://www.libsdl.org/" target="_blank">SDL2</a></p>
+                <a href="https://github.com/emboiko/C_Raycast" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img
+                        class="logo c" src="img/c.png" alt="c">C_Raycast</a>
+                <p>Raycasting with C and <a href="https://www.libsdl.org/"
+                        target="_blank">SDL2</a></p>
                 <p class="project-passage">
-                    A basic implementation of Raycasting in C with a traditional game loop, improved controls (QWEASD),
+                    A basic implementation of Raycasting in C with a traditional game
+                    loop, improved controls (QWEASD),
                     and nostalgic textures.
                 </p>
             </div>
@@ -258,12 +328,18 @@
 
         <div class="project box">
             <div class="project-description">
-                <a href="https://github.com/emboiko/pcdmon" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo c" src="img/c.png" alt="c">pcdmon</a>
-                <p>Render a visualization for an individual Windows performance counter (<a href="https://www.libsdl.org/" target="_blank">SDL2</a>)</p>
+                <a href="https://github.com/emboiko/pcdmon" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img
+                        class="logo c" src="img/c.png" alt="c">pcdmon</a>
+                <p>Render a visualization for an individual Windows performance counter
+                    (<a href="https://www.libsdl.org/" target="_blank">SDL2</a>)</p>
                 <p class="project-passage">
-                    This application creates a dynamically sizeable chart populated with data consumed from win32
-                    <a href="https://docs.microsoft.com/en-us/windows/win32/perfctrs/performance-counters-portal" target="_blank">performance counters</a>,
-                    primarily those which are rate-based. Existing paths for a given machine can be enumerated easily using PowerShell,
+                    This application creates a dynamically sizeable chart populated with
+                    data consumed from win32
+                    <a href="https://docs.microsoft.com/en-us/windows/win32/perfctrs/performance-counters-portal"
+                        target="_blank">performance counters</a>,
+                    primarily those which are rate-based. Existing paths for a given
+                    machine can be enumerated easily using PowerShell,
                     and subsequently used as a command line argument for pcdmon.
                 </p>
             </div>
@@ -274,10 +350,13 @@
 
         <div class="project box">
             <div class="project-description">
-                <a href="https://github.com/emboiko/winDozer" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo" src="img/cpp.png" alt="c++">winDozer</a>
+                <a href="https://github.com/emboiko/winDozer" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img class="logo"
+                        src="img/cpp.png" alt="c++">winDozer</a>
                 <p>Move windows at the speed of thought</p>
                 <p class="project-passage">
-                    A pocket-sized, macro-based, vim-esque language for the Windows DWM that's very much a work in progress.
+                    A pocket-sized, macro-based, vim-esque language for the Windows DWM
+                    that's very much a work in progress.
                 </p>
             </div>
             <div id="winDozer" class="project-images">
@@ -287,20 +366,25 @@
 
         <div class="project box">
             <div class="project-description">
-                <a href="https://github.com/emboiko/Portcullis" target="_blank"><img src="/img/github.png" class="logo" alt="github"><img class="logo" src="img/cpp.png" alt="c++">Portcullis</a>
+                <a href="https://github.com/emboiko/Portcullis" target="_blank"><img
+                        src="/img/github.png" class="logo" alt="github"><img class="logo"
+                        src="img/cpp.png" alt="c++">Portcullis</a>
                 <p>Made with Arduino </p>
                 <p class="project-passage">
-                    Monitor a given door, window, cabinet, drawer, etc. with a laser. Attach callback functions and/or
-                    processes to given events with the associated Python "driver". This Python code is meant to be
-                    modified or extended to fit individual use cases, however a simple x64 executable version is
-                    included, which is compiled with <a href="https://www.pyinstaller.org/" target="_blank">PyInstaller</a>
-
-
-
+                    Monitor a given door, window, cabinet, drawer, etc. with a laser.
+                    Attach callback functions and/or
+                    processes to given events with the associated Python "driver". This
+                    Python code is meant to be
+                    modified or extended to fit individual use cases, however a simple x64
+                    executable version is
+                    included, which is compiled with
+                    <a href="https://www.pyinstaller.org/" target="_blank">PyInstaller
+                    </a>
                 </p>
             </div>
             <div id="portcullis" class="project-images">
-                <img class="portcullis" src="img/portfolio/Portcullis.jpg" alt="Portcullis">
+                <img class="portcullis" src="img/portfolio/Portcullis.jpg"
+                    alt="Portcullis">
             </div>
         </div>
 

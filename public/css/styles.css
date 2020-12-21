@@ -220,6 +220,17 @@ a:visited{
     padding: 12px;
     letter-spacing: 5px;
     color: #FFFFFF;
+    text-align: center;
+}
+#my-projects section {
+    font-size: 20px;
+    margin-top: 10px;
+}
+#my-projects section a {
+    display:block;
+}
+#my-projects a:hover{
+    text-decoration: underline;
 }
 #my-projects .ruler{
     width:100%;

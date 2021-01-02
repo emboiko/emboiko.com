@@ -55,7 +55,7 @@ app.post("/contact", async (req, res) => {
   const message = req.body.compose.trim();
   if (!message) error = "Message field must not be empty.";
 
-  let gCaptchaResponse = req.body["g-recaptcha-response"];
+  const gCaptchaResponse = req.body["g-recaptcha-response"];
   if (!gCaptchaResponse) error = "Invalid reCaptcha.";
   else {
     const url = "https://www.google.com/recaptcha/api/siteverify";

@@ -31,9 +31,15 @@
 
             <form action="/contact" method="POST">
                 <h2 class="contact-head">Write me a message</h2>
-                <input type="text" name="name" id="message-name" placeholder="Name">
-                <input type="text" name="email" id="message-email" placeholder="Email">
-                <textarea name="compose" id="contact-compose" required></textarea>
+                <p class="highlight mbottom">{{error}}</p>
+                <input type="text" name="name" id="message-name" placeholder="Name"
+                    value={{name}}>
+                <input type="text" name="email" id="message-email" placeholder="Email"
+                    value={{email}}>
+                <textarea name="compose" id="contact-compose"
+                    required>{{message}}</textarea>
+                <div class="g-recaptcha" data-theme="dark"
+                    data-sitekey="6Le-QR0aAAAAAJ2wycV2WIXQKRuiNUQ4M3pryL4O"></div>
                 <button class="submit">Submit</button>
             </form>
         </div>
@@ -42,5 +48,7 @@
 
     {{>footer}}
 </div>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 {{>html_footer}}

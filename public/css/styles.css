@@ -66,6 +66,9 @@
     border-radius: 15px;
     z-index: 1;
 }
+.mbottom {
+    margin-bottom: 5px;
+}
 .highlight{
     color:var(--highlight);
 }
@@ -356,6 +359,14 @@ a:visited{
 }
 .submit:hover{
     background-color:var(--highlight);
+}
+.g-recaptcha {
+    margin: 10px auto 0 auto;
+}
+.submitted {
+    width: 50vw;
+    margin: 75px auto 0 auto;
+    text-align: center;
 }
 /************************************/
 #signup-form{

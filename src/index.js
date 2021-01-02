@@ -6,6 +6,7 @@ const passport = require("passport");
 const flash = require("express-flash");
 const session = require("express-session");
 const methodOverride = require("method-override");
+const fetch = require("node-fetch");
 const messageEmail = require("./email/email");
 const Post = require("./models/post");
 const {
@@ -43,16 +44,44 @@ app.get("/about", (req, res) => res.render("about", { authed: req.authed }));
 app.get("/portfolio", (req, res) => res.render("portfolio", { authed: req.authed }));
 app.get("/signup", (req, res) => res.render("signup", { authed: req.authed }));
 app.get("/contact", (req, res) => res.render("contact", { authed: req.authed }));
-app.post("/contact", (req, res) => {
+
+app.post("/contact", async (req, res) => {
   let name = "Anonymous";
   let email = "Anonymous@emboiko.com";
-
   if (req.body.email) email = req.body.email;
   if (req.body.name) name = req.body.name;
 
-  const message = req.body.compose;
-  messageEmail(email, name, message);
-  res.render("submitted", { message: "Message submitted. We will get back to you in less than 24 hours" });
+  let error = "";
+  const message = req.body.compose.trim();
+  if (!message) error = "Message field must not be empty.";
+
+  let gCaptchaResponse = req.body["g-recaptcha-response"];
+  if (!gCaptchaResponse) error = "Invalid reCaptcha.";
+  else {
+    const url = "https://www.google.com/recaptcha/api/siteverify";
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+      },
+      body: `secret=${process.env.CAPTCHA_KEY}&response=${gCaptchaResponse}`
+    };
+    const response = await fetch(url, options).then(_res => _res.json())
+
+    if (!response.success) {
+      error = "Invalid reCaptcha."
+    }
+  }
+
+  if (error) res.render("contact", { error, email, name, message });
+  else {
+    messageEmail(email, name, message);
+    res.render(
+      "submitted",
+      { message: "Message submitted. We will get back to you in less than 24 hours" }
+    );
+  }
+
 });
 
 app.get("/blog", async (req, res) => {
@@ -67,12 +96,11 @@ app.get("/blog/compose", authenticated, (req, res) => {
 app.post("/blog/compose", authenticated, async (req, res) => {
   const post = new Post(req.body);
   try {
-    await post.save((err, post) => {
-      res.redirect(`/blog/${post._id}`);
-    });
+    await post.save();
   } catch (err) {
-    res.status(400).send(err);
+    return res.status(400).send(err);
   }
+  res.redirect(`/blog/${post._id}`);
 });
 
 app.get("/blog/:id", async (req, res) => {
@@ -91,6 +119,7 @@ app.get("/blog/:id", async (req, res) => {
     res.render("notfound", { authed: req.authed });
   }
 });
+
 app.patch("/blog/:id", authenticated, async (req, res) => {
   const updates = Object.keys(req.body);
 
@@ -107,6 +136,7 @@ app.patch("/blog/:id", authenticated, async (req, res) => {
     res.status(400).send(err);
   }
 });
+
 app.get("/blog/:id/edit", authenticated, async (req, res) => {
   const _id = req.params.id;
   try {
@@ -127,18 +157,22 @@ app.get("/blog/:id/edit", authenticated, async (req, res) => {
 app.get("/login", notAuthenticated, (req, res) => {
   res.render("login");
 });
+
 app.post("/login", notAuthenticated, passport.authenticate("local", {
   successRedirect: "/",
   failureRedirect: "/login",
   failureFlash: true
 }));
+
 app.get("/logout", (req, res) => {
   res.render("logout", { authed: req.authed });
 });
+
 app.delete("/logout", (req, res) => {
   req.logOut();
   res.redirect("/login");
 });
+
 
 app.get("*", (req, res) => {
   res.status(404).render("notfound", { authed: req.authed });

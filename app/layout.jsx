@@ -64,8 +64,15 @@ const themeScript = `
 `
 
 export const metadata = {
-  title: "Emboiko",
-  description: "Portfolio and project overview.",
+  title: "Edward Boiko - Software Engineer",
+  description: "Software engineer focused on correctness, systems design, and operator-focused applications.",
+  openGraph: {
+    title: "Edward Boiko - Software Engineer",
+    description: "Software engineer focused on correctness, systems design, and operator-focused applications.",
+    url: "https://emboiko.com",
+    locale: "en_US",
+    type: "website",
+  }
 }
 
 export default function RootLayout({ children }) {
